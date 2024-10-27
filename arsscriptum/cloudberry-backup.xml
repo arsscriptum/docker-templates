@@ -1,0 +1,575 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>CloudBerryBackup</Name>
+  <Repository>jlesage/cloudberry-backup</Repository>
+  <Registry>https://hub.docker.com/r/jlesage/cloudberry-backup/</Registry>
+  <Network>bridge</Network>
+  <Privileged>false</Privileged>
+  <Support>https://forums.unraid.net/topic/57217-support-cloudberry-backup/</Support>
+  <ReadMe>https://github.com/jlesage/docker-cloudberry-backup#readme</ReadMe>
+  <GitHub>https://github.com/jlesage/docker-cloudberry-backup</GitHub>
+  <Registry>https://hub.docker.com/r/jlesage/cloudberry-backup</Registry>
+  <Overview>
+Backup files and folders to cloud storage of your choice: Amazon S3, Azure Blob Storage, Google Cloud Storage, HP Cloud, Rackspace Cloud Files, OpenStack, DreamObjects and other.
+
+The GUI of the application is accessed through a modern web browser (no installation or configuration needed on the client side) or via any VNC client.
+
+Also, being based on Alpine Linux, size of this container is very small.
+
+For a complete documentation of this container, see https://github.com/jlesage/docker-cloudberry-backup#readme
+  </Overview>
+  <Category>Backup:</Category>
+  <WebUI>http://[IP]:[PORT:5800]</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/jlesage/docker-templates/master/jlesage/cloudberry-backup.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/jlesage/docker-templates/master/jlesage/images/cloudberry-backup-icon.png</Icon>
+  <ExtraParams/>
+  <Description>
+Backup files and folders to cloud storage of your choice: Amazon S3, Azure Blob Storage, Google Cloud Storage, HP Cloud, Rackspace Cloud Files, OpenStack, DreamObjects and other.
+
+The GUI of the application is accessed through a modern web browser (no installation or configuration needed on the client side) or via any VNC client.
+
+Also, being based on Alpine Linux, size of this container is very small.
+
+For a complete documentation of this container, see https://github.com/jlesage/docker-cloudberry-backup/blob/master/README.md.
+  </Description>
+  <Beta>False</Beta>
+  <Project>https://www.msp360.com/backup/</Project>
+  <Date>2024-09-29</Date>
+  <Changes>
+###v24.09.1 (2024-09-29)
+- Updated baseimage to version 4.6.4, which brings the following changes:
+  - Fixed web authentication feature with URL path-based reverse proxy.
+  - Rebuild against latest distro images to get security fixes.
+
+###v24.08.1 (2024-08-30)
+- Updated MSP360 Backup to version 4.3.0.54.
+
+###v24.07.1 (2024-07-04)
+- Updated MSP360 Backup to version 4.2.4.340.
+- Updated baseimage to version 4.6.3, which brings the following changes:
+  - Audio support through web browser.
+  - Web authentication support.
+  - Better support of GTK4 applications.
+  - Updated noVNC to version 1.5.0.
+  - Updated web UI components (Bootstrap, Font Awesome).
+  - When connecting, the control bar is now temporarily shown only once.
+  - During package mirror setup, make sure to keep permissions of copied files.
+
+###v24.01.1 (2024-01-20)
+- Updated MSP360 Backup (formerly CloudBerry) to version 4.2.0.81.
+- Updated baseimage to version 4.5.3, which brings the following changes:
+  - Disabled fullscreen support when page is loaded into an iFrame.
+  - Rebuilt against latest distro images to get security fixes.
+
+###v23.11.2 (2023-11-19)
+- Updated baseimage to version 4.5.2, which brings the following changes:
+  - Fixed issue that would cause the helper that takes ownership of a directory to fail when using a very high user or group ID.
+
+###v23.11.1 (2023-11-10)
+- Updated baseimage to version 4.5.1, which brings the following changes:
+  - Mirror for packages installation can be set via the `PACKAGES_MIRROR` environment variable.
+  - Improved the way the `take-ownership` script is working.
+  - Readiness and minimum running time checks should not be done for a service defined with an interval.
+  - Raise an error when a synched service fails to start.
+  - Minimum running time check of a service was using an incorrect way to verify if process is still alive.
+  - Fixed installation of CJK font.
+
+###v23.10.1 (2023-10-16)
+- Updated CloudBerry Backup to version 4.1.5.822.
+
+###v23.08.1 (2023-08-04)
+- Updated CloudBerry Backup to version 4.1.3.513.
+
+###v23.06.1 (2023-06-07)
+- Updated baseimage to version 4.4.2, which brings the following changes:
+  - Rebuilt against latest distro images to get security fixes.
+  - Updated X server to version 1.20.14.
+
+###v23.05.1 (2023-05-16)
+- Updated CloudBerry Backup to version 4.1.1.137.
+
+###v23.04.2 (2023-04-29)
+- Updated baseimage to version 4.4.1, which brings the following changes:
+  - Updated TigerVNC to version 1.13.1.
+
+###v23.04.1 (2023-04-05)
+- Updated CloudBerry Backup to version 4.1.0.103.
+
+###v23.03.2 (2023-03-11)
+- Updated CloudBerry Backup to version 4.0.3.412.
+
+###v23.03.1 (2023-03-05)
+- Updated baseimage to version 4.4.0, which brings the following changes:
+  - Updated components providing access to application's UI over web.
+  - Improved web UI usage with touch devices.
+  - Fixed issue with initialization of Linux users and groups when the `GROUP_ID` is also part of `SUP_GROUP_IDS`.
+  - Limit the maximum number of opened files on system having a very large, unlimited value. This prevents unnecessary waste of CPU resources and time for applications trying to close all possible file descriptors.
+
+###v23.02.2 (2023-02-08)
+- Updated baseimage to version 4.3.4, which brings the following changes:
+  - Fixed error message from openbox about missing Fontconfig cache directory.
+- Do not use the OCI Docker image format yet to keep better compatibility (e.g with older docker clients).
+
+###v23.02.1 (2023-02-04)
+- Updated baseimage to version 4.3.3, which brings robustness related enhancements.
+
+###v23.01.1 (2023-01-04)
+- Update of the baseimage to version 4.3.1 brings the following changes:
+  - Control menu can be moved to the right side of the screen.
+  - Automatic focus of the clipboard text box when opening the control menu.
+  - Automatic close of the control menu when clicking into the application.
+  - Rotation of the internal web server log files.
+
+###v22.12.4 (2022-12-23)
+- Updated CloudBerry Backup to version 4.0.2.402.
+- More time is allowed to the backup service to start.
+
+###v22.12.3 (2022-12-11)
+- Implemented workaround for issue seen with Synology devices where container would not start after an image update.  The problem is caused by Synology explicitly setting all environment variables and keeping values from the old version.
+
+###v22.12.2 (2022-12-09)
+- Fixed CloudBerry Backup version number stored into the image.
+
+###v22.12.1 (2022-12-09)
+- Updated CloudBerry Backup to version 4.0.1.310.
+- Versioning scheme of the Docker image changed to `YY.MM.SEQUENCE`.
+- Update of the baseimage to version 4.2.1 brings the following new features:
+  - Support for remote window resize.
+  - Updated the web UI with a new, simplified and less intrusive look.
+
+###v1.28.0 (2022-09-13)
+- Updated CloudBerry Backup to version 4.0.0.260.
+
+###v1.27.1 (2022-03-12)
+- Fixed issue where files whith special characters were not processed.
+
+###v1.27.0 (2022-03-06)
+- Updated CloudBerry Backup to version 3.3.2.22.
+
+###v1.26.1 (2022-02-03)
+- Fixed CloudBerry Backup Web Interface login.
+- Updated baseimage to version 3.5.8, which brings to following changes:
+  - Updated installed packages to get latest security fixes.
+
+###v1.26.0 (2021-12-16)
+- Updated CloudBerry Backup to version 3.3.0.11.
+
+###v1.25.0 (2021-11-23)
+- Updated CloudBerry Backup to version 3.2.3.156.
+
+###v1.24.1 (2021-01-05)
+- Updated CloudBerry Backup to version 3.1.3.17.
+
+###v1.24.0 (2020-10-20)
+- Updated CloudBerry Backup to version 3.1.0.83.
+
+###v1.23.0 (2020-07-19)
+- Upgraded CloudBerry Backup to version 3.0.2.122.
+- Now using baseimage v3.5.6, which brings the following changes:
+  - Upgraded glibc to version 2.31 on Alpine Linux images with glibc integrated.
+  - Updated installed packages to get latest security fixes.
+  - Adjusted the log monitor target for recent versions of YAD.
+
+###v1.22.0 (2020-05-09)
+- Upgraded CloudBerry Backup to version 3.0.0.100.
+- The backup engine now runs under the configured user.
+  - NOTE: Make sure `USER_ID` and `GROUP_ID` environment variables are properly set to allow CloudBerry Backup to access your files.
+- Now using baseimage v3.5.3, which brings the following changes:
+  - Updated installed packages to get latest security fixes.
+  - Make sure the tzdata is installed.
+
+###v1.21.2 (2019-12-08)
+- Upgraded CloudBerry Backup to version 2.10.1.36.
+
+###v1.21.1 (2019-10-27)
+- Upgraded CloudBerry Backup to version 2.10.1.26.
+
+###v1.21.0 (2019-10-24)
+- Upgraded CloudBerry Backup to version 2.10.0.123.
+
+###v1.20.3 (2019-08-27)
+- Upgraded CloudBerry Backup to version 2.9.4.12.
+
+###v1.20.2 (2019-08-16)
+- Upgraded CloudBerry Backup to version 2.9.3.15.
+
+###v1.20.1 (2019-07-31)
+- Upgraded CloudBerry Backup to version 2.9.2.14.
+
+###v1.20.0 (2019-07-05)
+- Upgraded CloudBerry Backup to version 2.9.1.16.
+
+###v1.19.0 (2019-05-17)
+- Upgraded CloudBerry Backup to version 2.9.0.114.
+
+###v1.18.1 (2019-04-24)
+- Now using baseimage v3.5.2, which brings the following changes:
+  - Updated installed packages to get latest security fixes.
+  - Fixed issue where the container could have a zombie process.
+  - Fixed issue where the password would not be submitted when pressing the enter key in the password modal.
+  - Use relative path for favicon ressources to be more friendly with reverse proxy senarios.
+
+###v1.18.0 (2019-04-05)
+- Upgraded CloudBerry Backup to version 2.8.3.10.
+
+###v1.17.0 (2019-03-07)
+- Upgraded CloudBerry to version 2.8.1.14.
+
+###v1.16.0 (2019-02-27)
+- Upgraded CloudBerry Backup to version 2.8.0.35.
+- Make sure to start the UI only when the management service is ready.
+
+###v1.15.0 (2018-10-02)
+- Upgraded CloudBerry Backup to version 2.6.0.31.
+
+###v1.14.1 (2018-09-18)
+- Now using baseimage v3.5.1, which brings the following changes:
+  - Updated installed packages to get latest security fixes.
+
+###v1.14.0 (2018-09-06)
+- Upgraded CloudBerry Backup to version 2.5.1.26.
+
+###v1.13.1 (2018-08-08)
+- Upgraded CloudBerry Backup to version 2.5.0.39.
+
+###v1.13.0 (2018-07-17)
+- Upgraded CloudBerry Backup to version 2.5.0.32.
+- Now using baseimage v3.4.0, which is based on Alpine Linux 3.8.
+
+###v1.12.3 (2018-06-08)
+- Upgraded CloudBerry Backup to version 2.4.3.11.
+
+###v1.12.2 (2018-05-16)
+- Upgraded CloudBerry Backup to version 2.4.2.4.
+
+###v1.12.1 (2018-04-07)
+- Upgraded CloudBerry Backup to version 2.4.1.6.
+
+###v1.12.0 (2018-03-27)
+- Updapted CloudBerry Backup to version 2.4.0.17.
+- Switched to a baseimage based on Alpine Linux 3.7.
+
+###v1.11.3 (2018-03-02)
+- Now using baseimage v3.3.4, which brings the following changes (since last used version):
+  - Make sure the log monitor is started after the X server.
+  - Fixed an issue where the log monitor `yad` target would use XDG folders of the application.
+  - Fixed issue where log monitor states were not cleared during container startup.
+
+###v1.11.2 (2018-02-03)
+- Now using baseimage v3.3.2, which brings the following changes:
+  - Restored timezone support in Alpine Linux images with glibc.
+  - Fixed issue in `add-pkg` helper where a package could be incorrectly detected as installed.
+
+###v1.11.1 (2018-01-30)
+- Now using baseimage v3.3.1, which brings the following changes:
+  - Adjusted the way some ressources are accessed to better support reverse proxy to the container.
+
+###v1.11.0 (2018-01-26)
+- Upgraded CloudBerry Backup to version 2.3.0.12.
+
+###v1.10.0 (2018-01-22)
+- Now using baseimage v3.3.0, which brings the following changes (since last used version):
+  - For Alpine Linux images with glibc, automatically update dynamic linker's cache after new libraries are installed.
+  - Fixed the LANG environment variable not being set properly.
+  - Added the ability to automatically install a CJK (Chinese/Japanese/Korean) font.
+- Upgraded CloudBerry Backup to version 2.2.1.9.
+
+###v1.9.3 (2018-01-11)
+- Fixed issue where libraries were not found.
+
+###v1.9.2 (2018-01-11)
+- Now using baseimage v3.2.2, which brings the following changes (since last used version):
+  - Upgraded S6 overlay to version 1.21.2.2.
+  - Upgraded glibc to version 2.26 (Alpine Linux glibc images).
+  - Adjusted the way ownership of /config is taken to better support cases where the folder is mapped to a network share.
+- Small adjustment to the way ownership of files are taken.
+
+###v1.9.1 (2017-12-12)
+- Now using baseimage v3.1.4, which brings the following changes:
+  - Set 2 worker processes for nginx.
+
+###v1.9.0 (2017-12-04)
+- Upgraded CloudBerry Backup to version 2.2.0.76.
+
+###v1.8.2 (2017-11-20)
+- Now using baseimage v3.1.3, which brings the following changes:
+  - Upgraded S6 overlay to version 1.21.2.1.
+
+###v1.8.1 (2017-11-07)
+- Now using baseimage v3.1.2, which brings the following changes (from last used version):
+  - Fixed an issue where a self-disabled service could be restarted.
+  - Upgraded S6 overlay to version 1.21.2.0.
+  - Use a more efficient way to monitor status files.
+
+###v1.8.0 (2017-10-29)
+- Now using baseimage v3.1.0, which brings the following changes:
+  - Upgraded S6 overlay to version 1.21.1.1.
+  - Enhanced integration of service dependencies functionality.
+  - Added a simple log monitor.
+  - Fixed race condition where container's exit code would not be the expected one.
+  - Fixed issue where application's GUI fails to displayed when accessing it through the web interface via standard ports 80/443.
+
+###v1.7.0 (2017-10-09)
+- Now using baseimage v3.0.2, which brings the following changes:
+  - Better support for service dependencies.
+  - Added support for secure access to the application's GUI.
+
+###v1.6.0 (2017-09-20)
+- Now using baseimage v2.0.9, which brings the following changes:
+  - Restore default `/etc/shadow` during container startup.
+- Upgraded CloudBerry Backup to version 2.1.0.81.
+- Added support for the new CloudBerry Backup native web interface.
+
+###v1.5.8 (2017-09-08)
+- Now using baseimage v2.0.8, which brings the following changes:
+  - Fixed duplicated entries in /etc/passwd and /etc/group that were created after a restart of the container.
+- Upgraded CloudBerry Backup to version 2.0.3.30.
+
+###v1.5.7 (2017-09-06)
+- Now using baseimage v2.0.7, which brings the following changes:
+  - Fixed timezone support on alpine-glibc images.
+- Upgraded CloudBerry Backup to version 2.0.3.26.
+- Minor fix in displayed app title.
+
+###v1.5.6 (2017-08-28)
+- Upgraded CloudBerry Backup to version 2.0.3.25.
+
+###v1.5.5 (2017-08-14)
+- Now using baseimage v2.0.6, which brings the following changes:
+  - Upgraded S6 overlay to version 1.20.0.0.
+
+###v1.5.4 (2017-07-31)
+- Now using baseimage v2.0.5, which brings the following changes (from last used version):
+  - Clear the environment of the container during startup.
+  - Clear the /tmp folder during startup.
+  - Cleanly terminate the X server when container is restarted/stopped.
+  - Improved robustness of X server starting process.
+  - Removed unneeded files from the image.
+
+###v1.5.3 (2017-07-27)
+- Now using baseimage v2.0.3, which brings the following changes:
+  - Improved robustness of the X server starting process.
+
+###v1.5.2 (2017-07-23)
+- Now using baseimage v2.0.2, which brings the following changes:
+  - Proper VNC port is exposed.
+
+###v1.5.1 (2017-07-18)
+- Now using baseimage v2.0.1, which brings the following changes:
+  - Internal enhancements.
+  - Clean temporary files left by npm.
+
+###v1.5.0 (2017-07-17)
+- Now using baseimage v2.0.0, which brings the following changes:
+  - Various internal enhancements.
+  - Fixed the way a service waits for another one.
+
+###v1.4.0 (2017-07-04)
+- Now using baseimage v1.5.0, which brings the following changes:
+  - Added the UMASK environment variable to control how file permissions are set for newly created files.
+  - Added the X11VNC_EXTRA_OPTS environment variable used to pass additional arguments to the x11vnc server.
+  - By default, activate auto-scaling of application's window.
+  - Applied latest Alpine Linux security updates.
+
+###v1.3.1 (2017-06-22)
+- Now using baseimage v1.4.3, which brings the following changes:
+  - Updated Alpine Linux to version 3.6.2.
+
+###v1.3.0 (2017-06-22)
+- Switched to Alpine Linux 3.6 baseimage.
+
+###v1.2.0 (2017-06-21)
+- Upgraded CloudBerry Backup to version 2.0.2.39.
+- Now using baseimage v1.4.2, which brings the following changes (from last used version):
+  - Associate the application's icon to a unique version to avoid browser cache issues.
+  - Fixed prefix of some service related messages.
+  - Added support for supplying supplementary groups of the application.
+  - Improved process startup and shutdown.
+  - When container is stopped or restarted, processes are now terminated gracefully and in proper order. This allow the GUI application to execute its termination routine.
+  - No more error messages when container is stopped or restarted.
+
+###v1.1.2 (2017-05-30)
+- Now using baseimage v1.3.2, which brings the following changes:
+  - Fixed password modal window not showing up when required.
+
+###v1.1.1 (2017-05-17)
+- Now using baseimage v1.3.1, which brings the following changes:
+  - Better font is used.
+
+###v1.1.0 (2017-05-15)
+- Now using baseimage v1.3.0, which brings the following changes:
+  - Added support for application's niceness configuration.
+
+###v1.0.3 (2017-05-12)
+- Now using baseimage v1.2.3, which brings the following changes:
+  - Adjusted the default display width to 1280 pixels, as documented.
+
+###v1.0.2 (2017-05-11)
+- Now using baseimage v1.2.2, which brings the following changes:
+  - Fixed issue with the web UI, where the remote application's window was not taking the available height after activating/deactivating the hideable navigation bar.
+
+###v1.0.1 (2017-05-10)
+- Now using baseimage v1.2.1, which brings the following changes:
+  - Fixed issue where clipboard content was lost on modal window closure.
+
+###v1.0.0 (2017-05-09)
+- Initial release.
+
+  </Changes>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>7802</HostPort>
+        <ContainerPort>5800</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>7902</HostPort>
+        <ContainerPort>5900</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>43210</HostPort>
+        <ContainerPort>43210</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>43211</HostPort>
+        <ContainerPort>43211</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/cloudberry-backup</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user</HostDir>
+      <ContainerDir>/storage</ContainerDir>
+      <Mode>ro</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>99</Value>
+      <Name>USER_ID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>100</Value>
+      <Name>GROUP_ID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>0000</Value>
+      <Name>UMASK</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>0</Value>
+      <Name>APP_NICENESS</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>1920</Value>
+      <Name>DISPLAY_WIDTH</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>1080</Value>
+      <Name>DISPLAY_HEIGHT</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>0</Value>
+      <Name>DARK_MODE</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>0</Value>
+      <Name>WEB_AUDIO</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>0</Value>
+      <Name>WEB_AUTHENTICATION</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>WEB_AUTHENTICATION_USERNAME</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>WEB_AUTHENTICATION_PASSWORD</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>0</Value>
+      <Name>SECURE_CONNECTION</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>SSL</Value>
+      <Name>SECURE_CONNECTION_VNC_METHOD</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>60</Value>
+      <Name>SECURE_CONNECTION_CERTS_CHECK_INTERVAL</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>5800</Value>
+      <Name>WEB_LISTENING_PORT</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>5900</Value>
+      <Name>VNC_LISTENING_PORT</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>CBB_WEB_INTERFACE_USER</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>CBB_WEB_INTERFACE_PASSWORD</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <!-- Volume Mappings -->
+  <Config Name="Config Directory" Target="/config" Default="/mnt/user/appdata/cloudberry-backup" Mode="rw" Description="This is where the application stores its configuration, states, log and any files needing persistency." Type="Path" Display="advanced-hide" Required="True" Mask="False"/>
+  <Config Name="Storage" Target="/storage" Default="/mnt/user" Mode="ro" Description="This location contains files from your host that need to be accessible to the application." Type="Path" Display="always-hide" Required="True" Mask="False"/>
+  <!-- Variable Mappings -->
+  <Config Name="User ID" Target="USER_ID" Default="99" Mode="" Description="ID of the user the application runs as." Type="Variable" Display="advanced-hide" Required="True" Mask="False"/>
+  <Config Name="Group ID" Target="GROUP_ID" Default="100" Mode="" Description="ID of the group the application runs as." Type="Variable" Display="advanced-hide" Required="True" Mask="False"/>
+  <Config Name="Umask" Target="UMASK" Default="0000" Mode="" Description="Mask that controls how file permissions are set for newly created files.  The value of the mask is in octal notation." Type="Variable" Display="advanced" Required="False" Mask="False"/>
+  <Config Name="Niceness (priority)" Target="APP_NICENESS" Default="0" Mode="" Description="Priority at which the application should run.  A niceness value of -20 is the highest priority and 19 is the lowest priority. NOTE: Setting a negative value requires additional permissions.  Thus, &quot;--cap-add=SYS_NICE&quot; must be added to Extra Parameters (shown when Advanced View is enabled)." Type="Variable" Display="advanced" Required="False" Mask="False"/>
+  <Config Name="Display Width" Target="DISPLAY_WIDTH" Default="1920" Mode="" Description="Width (in pixels) of the application's window." Type="Variable" Display="advanced" Required="False" Mask="False"/>
+  <Config Name="Display Height" Target="DISPLAY_HEIGHT" Default="1080" Mode="" Description="Height (in pixels) of the application's window." Type="Variable" Display="advanced" Required="False" Mask="False"/>
+  <Config Name="Dark Mode" Target="DARK_MODE" Default="0" Mode="" Description="When set to &quot;1&quot;, dark mode is enabled for the application." Type="Variable" Display="advanced" Required="False" Mask="False"/>
+  <Config Name="Web Audio" Target="WEB_AUDIO" Default="0" Mode="" Description="When set to &quot;1&quot;, audio support is enabled, meaning that any audio produced by the application is played through the browser. Note that audio is not supported for VNC clients." Type="Variable" Display="advanced" Required="False" Mask="False"/>
+  <Config Name="Web Authentication" Target="WEB_AUTHENTICATION" Default="0" Mode="" Description="When set to &quot;1&quot;, the application' GUI is protected via a login page when accessed via a web browser." Type="Variable" Display="advanced" Required="False" Mask="False"/>
+  <Config Name="Web Authentication Username" Target="WEB_AUTHENTICATION_USERNAME" Default="" Mode="" Description="Optional username to configure for the web authentication.  This is a quick and easy way to configure credentials for a single user.  To configure credentials in a more secure way, or to add more users, see the documentation." Type="Variable" Display="advanced" Required="False" Mask="False"/>
+  <Config Name="Web Authentication Password" Target="WEB_AUTHENTICATION_PASSWORD" Default="" Mode="" Description="Optional password to configure for the web authentication.  This is a quick and easy way to configure credentials for a single user.  To configure credentials in a more secure way, or to add more users, see the documentation." Type="Variable" Display="advanced" Required="False" Mask="False"/>
+  <Config Name="Secure Connection" Target="SECURE_CONNECTION" Default="0" Mode="" Description="Whether or not an encrypted connection should be used to access the application's GUI.  Set to &quot;1&quot; to encrypt the connection. NOTE: When enabling the secure connection, security parameters needs to be generated.  This one-time operation is done during container startup.  Depending on your system, this could take a few minutes. GUI of the application won't be available until the operation completes." Type="Variable" Display="advanced" Required="False" Mask="False"/>
+  <Config Name="Secure Connection VNC Method" Target="SECURE_CONNECTION_VNC_METHOD" Default="SSL" Mode="" Description="Method used to perform the secure VNC connection.  Possible values are &quot;SSL&quot; or &quot;TLS&quot;." Type="Variable" Display="advanced" Required="False" Mask="False"/>
+  <Config Name="Secure Connection Certificate Check Interval" Target="SECURE_CONNECTION_CERTS_CHECK_INTERVAL" Default="60" Mode="" Description="Interval, in seconds, at which the system verifies if web or VNC certificates have changed.  When a change is detected, the affected services are automatically restarted.  A value of &quot;0&quot; disables the check." Type="Variable" Display="advanced" Required="False" Mask="False"/>
+  <Config Name="Web Listening Port (Non-Bridge Network Type)" Target="WEB_LISTENING_PORT" Default="5800" Mode="" Description="Port used by the web server to serve the UI of the application.  This port is used internally by the container and it is usually not required to be changed.  NOTE: This setting is relevant only when the Network Type is set to something else than Bridge." Type="Variable" Display="advanced" Required="False" Mask="False"/>
+  <Config Name="VNC Listening Port (Non-Bridge Network Type)" Target="VNC_LISTENING_PORT" Default="5900" Mode="" Description="Port used by the VNC server to serve the UI of the application.  This port is used internally by the container and it is usually not required to be changed.  NOTE: This setting is relevant only when the Network Type is set to something else than Bridge." Type="Variable" Display="advanced" Required="False" Mask="False"/>
+  <Config Name="CloudBerry Backup Web Interface User" Target="CBB_WEB_INTERFACE_USER" Default="" Mode="" Description="User name to use to login to the CloudBerry Backup's web interface." Type="Variable" Display="advanced" Required="False" Mask="False"/>
+  <Config Name="CloudBerry Backup Web Interface Password" Target="CBB_WEB_INTERFACE_PASSWORD" Default="" Mode="" Description="Password to use to login to the CloudBerry Backup's web interface. **Warning**: See documentation for a more secure way to specify the password." Type="Variable" Display="advanced" Required="False" Mask="True"/>
+  <!-- Port Mappings -->
+  <Config Name="WEB Port for GUI (Bridge Network Type)" Target="5800" Default="7802" Mode="tcp" Description="Port to access the application's GUI via the web interface.  NOTE: This setting is relevant only when the Network Type is set to &quot;Bridge&quot;." Type="Port" Display="advanced-hide" Required="True" Mask="False"/>
+  <Config Name="VNC Port for GUI (Bridge Network Type)" Target="5900" Default="7902" Mode="tcp" Description="Port to access the application's GUI via VNC protocol.  Optional if no VNC client is used.  NOTE: This setting is relevant only when the Network Type is set to &quot;Bridge&quot;." Type="Port" Display="advanced-hide" Required="False" Mask="False"/>
+  <Config Name="CloudBerry Backup Web Interface HTTP Port" Target="43210" Default="43210" Mode="tcp" Description="Port used to access the CloudBerry Backup's web interface via HTTP.  NOTE: This setting is relevant only when the Network Type is set to &quot;Bridge&quot;." Type="Port" Display="advanced" Required="False" Mask="False"/>
+  <Config Name="CloudBerry Backup Web Interface HTTPs Port" Target="43211" Default="43211" Mode="tcp" Description="Port used to access the CloudBerry Backup's web interface via HTTPs.  NOTE: This setting is relevant only when the Network Type is set to &quot;Bridge&quot;." Type="Port" Display="advanced" Required="False" Mask="False"/>
+</Container>
